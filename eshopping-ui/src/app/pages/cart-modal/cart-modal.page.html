@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="close()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>My Cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let product of products | async">
+    <ion-card-content class="ion-no-padding">
+      <ion-row class="ion-no-padding">
+        <ion-col size="3" class="ion-no-padding">
+          <div class="product-image" [style.background-image]="'url(' + product.detail_image + ')'"></div>
+        </ion-col>
+        <ion-col size="9">
+          <ion-row class="ion-no-padding">
+            <ion-col size="12" class="ion-no-padding">
+              <h2 class="product">
+                {{ product.name }}
+              </h2>
+            </ion-col>
+            <ion-col size="8">
+              <p class="price">
+                {{ product.price | currency:'INR'}}
+              </p>
+            </ion-col>
+            <ion-col size="4">
+              <div class="ion-text-center" class="amount-change-row">
+                <ion-button shape="round" size="small" (click)="increase(product)" color="tertiary">
+                  <ion-icon name="add" slot="icon-only"></ion-icon>
+                </ion-button>
+                <span class="amount">{{ product.amount }}</span>
+                <ion-button shape="round" size="small" (click)="decrease(product)" color="tertiary">
+                  <ion-icon name="remove" slot="icon-only"></ion-icon>
+                </ion-button>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="ion-text-center">
+      <b>Total: {{ total | async | currency: 'INR'}}</b>
+    </div>
+  </ion-toolbar>
+</ion-footer>

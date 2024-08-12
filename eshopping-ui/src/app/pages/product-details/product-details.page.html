@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ product.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-spinner *ngIf="showLoader" class="page-loader" name="bubbles"></ion-spinner>
+
+<ion-content>
+  <!-- <app-cart-button></app-cart-button> -->
+
+  <ion-card *ngIf="!showLoader">
+    <img [src]="product.detail_image" style="width: 100%;height: 50%;">
+    <ion-card-content>
+      <h2>{{ product.name }}</h2>
+      <p>{{ product.description }}</p>
+      <ion-button expand="block" (click)="addToCart()" class="ion-margin-top">
+        <ion-icon name="cart" slot="start"></ion-icon>
+        Add to cart
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+  <div slot="fixed" class="cart">
+    <app-cart-button></app-cart-button>
+  </div>
+</ion-content>

@@ -1,0 +1,8 @@
+<ion-fab vertical="bottom" horizental="center" slot="fixed">
+    <ion-fab-button (click)="openCart()" class="cart-fab-button" color="secondary" #mycart>
+      <div class="cart-length">
+        {{ cartItemCount | async}}
+      </div>
+      <ion-icon name="cart" class="cart-icon"></ion-icon>
+    </ion-fab-button>
+</ion-fab>

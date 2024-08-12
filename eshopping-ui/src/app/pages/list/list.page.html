@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Products</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-spinner *ngIf="showLoader" class="page-loader" name="bubbles"></ion-spinner>
+
+<ion-content>
+  <!-- <swiper-container #swiper (swiperslidechange)="categoryChanged($event)">
+    <swiper-slide>
+      <div
+        class="category-image"
+        [style.background-image]="'linear-gradient(transparent -40%,var(--ion-color-dark))'"
+      >
+        <h2>All Products</h2>
+        <p>Enjoy it hot or cold</p>
+      </div>
+    </swiper-slide> -->
+
+  <!-- <swiper-slide *ngFor="let cat of categories | async">
+      <div
+        class="category-image"
+        [style.background-image]="'linear-gradient(0deg, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.5)), url(' + cat.detail_image + ')'"
+      >
+        <h2>{{ cat.name }}</h2>
+        <p>{{ cat.subtitle }}</p>
+      </div>
+    </swiper-slide>
+  </swiper-container> -->
+
+  <app-product [product]="p" *ngFor="let p of products"></app-product>
+  <div slot="fixed" class="cart">
+    <app-cart-button></app-cart-button>
+  </div>
+</ion-content>

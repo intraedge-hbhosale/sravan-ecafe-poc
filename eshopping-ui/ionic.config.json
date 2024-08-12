@@ -1,0 +1,7 @@
+{
+  "name": "eshopping",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

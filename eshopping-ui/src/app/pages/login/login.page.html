@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+</ion-header>
+<div class="spinner">
+  <ion-spinner *ngIf="showLoader" class="page-loader" name="bubbles"></ion-spinner>
+</div>
+
+<ion-content *ngIf="!showLoader">
+  <div class="login-section ion-padding">
+    <div class="heading ion-padding">
+      <h1>Welcome Eshop!</h1>
+      <p>Sign in to continue</p>
+    </div>
+    <form class="login-form ion-padding" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-input">
+        <ion-icon name="mail-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">EMAIL</ion-label>
+          <ion-input label-placement="floating" fill="outline" type="email" formControlName="email"
+            errorText="Enter valid email"></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">PASSWORD</ion-label>
+          <ion-input label-placement="floating" fill="outline" type="password" formControlName="password"
+            errorText="Enter valid password"></ion-input>
+        </ion-item>
+      </div>
+      <div class="action-button ion-padding">
+        <ion-button size="large" class="login-button" type="submit" [disabled]="loginForm.invalid">Log In</ion-button>
+        <ion-button size="large" class="signup-button" fill="outline" routerLink="/signup">Sign Up</ion-button>
+      </div>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-card>
+  <ion-card-content>
+    <ion-row class="ion-no-padding">
+      <ion-col size="3" tappable class="ion-no-padding" [routerLink]="['/product', product._id]">
+        <div class="product-image" [style.background-image]="'url(' + product.thumbnail_image + ')'"></div>
+      </ion-col>
+      <ion-col size="7" tappable [routerLink]="['/product', product._id]">
+        <span class="category">{{ category }}</span>
+        <h2 class="product">
+          {{ product.name }}
+        </h2>
+        <p class="price">
+          {{ product.price | currency : "INR" }}
+        </p>
+      </ion-col>
+      <ion-col size="2" tappable (click)="addToCart()" class="add-col">
+        <div class="icon-container">
+          <ion-icon name="add" color="light"></ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
+</ion-card>

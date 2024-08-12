@@ -1,0 +1,20 @@
+.amount {
+    font-weight: 500;
+    font-size: large;
+    color: #000;
+}
+
+.amount-change-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    ion-button {
+        --padding-start: 4px;
+        --padding-end: 4px;
+    }
+}

@@ -1,0 +1,39 @@
+.product-image {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+ 
+ion-card-content {
+    padding: 0px !important;
+}
+ 
+ion-card {
+    margin: 16px 16px;
+}
+ 
+ion-card:focus {
+    outline: none;
+}
+ 
+.add-col {
+    background: var(--ion-color-tertiary);
+ 
+    .icon-container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+ 
+    ion-icon {
+        font-size: 34px;
+    }
+}
+ 
+.category {
+    color: var(--ion-color-medium);
+}
